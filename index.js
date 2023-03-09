@@ -1,4 +1,4 @@
-import { instagram } from 'instagram-scraper-api';
+const instagram = require('instagram-scraper-api');
 var data;
 function getUser(){
   var username = document.getElementsByTagName('input')[0].value;
