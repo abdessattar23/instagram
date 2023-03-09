@@ -2,6 +2,16 @@
   <body>
     <input type="text" placeholder="type a username..." required/>
     <button onclick="getUser()">Get User Inforamtion</button>
-    <script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instagram-scraper-api"></script>
+<script>
+function getUser(){
+  var username = document.getElementsByTagName('input')[0].value;
+  instagram
+    .user(username)
+    .then((user) => console.log(user))
+    .catch((err) => console.error(err));
+}
+</script>
+
   </body>
 </html>
