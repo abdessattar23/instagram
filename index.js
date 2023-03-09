@@ -1,9 +1,10 @@
-import instagram from 'instagram-scraper-api';
+const InstaScrape = require('instagram-scraping');
+
+const username = document.querySelectorAll('input')[0].value;
 function getUser(){
-  var username = document.getElementsByTagName('input')[0].value;
-instagram
-  .user(username)
-  .then((user) => console.log(user))
-  .catch((err) => console.error(err));
-  
+InstaScrape.getUserData(username).then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.error(err);
+});
 }
