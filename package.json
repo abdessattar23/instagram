@@ -1,0 +1,8 @@
+{
+  "name": "instagram",
+  "version": "1.0.0",
+  "dependencies": {
+    "instagram-scraper-api": "^1.0.1"
+  },
+  "author": "Abdessattar Elyagoubi"
+}
