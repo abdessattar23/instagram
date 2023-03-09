@@ -4,5 +4,8 @@
   "dependencies": {
     "instagram-scraper-api": "^1.0.1"
   },
+    "scripts": {
+    "build": "npm install"
+  },
   "author": "Abdessattar Elyagoubi"
 }
