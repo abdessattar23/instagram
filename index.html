@@ -2,6 +2,17 @@
   <body>
     <input type="text" placeholder="type a username..." required/>
     <button onclick="getUser()">Get User Inforamtion</button>
-<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instagram-scraping@2.5.2"></script>
+    <script>
+const username = document.querySelectorAll('input')[0].value;
+
+function getUser() {
+  InstaScrape.getUserData(username).then((result) => {
+    console.log(result);
+  }).catch((err) => {
+    console.error(err);
+  });
+}
+    </script>
   </body>
 </html>
