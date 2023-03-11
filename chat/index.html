@@ -27,13 +27,14 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': 'Bearer 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'
           },
           body: JSON.stringify(data)
         })
         .then(response => response.json())
         .then(data => {
           const answer = data.choices[0].text;
+          alert(answer);
           document.getElementById('answer').innerHTML = answer;
         })
         .catch(error => console.error(error));
