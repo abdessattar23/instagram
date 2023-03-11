@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatGPT API Demo</title>
+  </head>
+  <body>
+    <h1>Ask a Question</h1>
+    <form>
+      <input type="text" id="question" name="question">
+      <button type="button" onclick="getAnswer()">Ask</button>
+    </form>
+    <div id="answer"></div>
+
+    <script>
+      function getAnswer() {
+        const question = document.getElementById('question').value;
+        const endpoint = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+        const prompt = `Q: ${question}\nA:`;
+        const data = {
+          prompt: prompt,
+          max_tokens: 150,
+          temperature: 0.7,
+          n: 1,
+          stop: '\n'
+        };
+        fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer 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'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+          const answer = data.choices[0].text;
+          document.getElementById('answer').innerHTML = answer;
+        })
+        .catch(error => console.error(error));
+      }
+    </script>
+  </body>
+</html>
